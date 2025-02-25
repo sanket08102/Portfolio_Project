@@ -171,27 +171,27 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+      "Sanket is an exceptional developer who built a fast and responsive website for our business. His expertise in React and Next.js ensured a smooth user experience. Highly recommend him for any web project!",
+    name: "Rahul Sharma",
+    designation: "Startup Founder",
+    company: "TechNova Solutions",
+    image: "https://randomuser.me/api/portraits/men/4.jpg",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
+      "Sanket developed a full-stack MERN application for us, and his coding skills were top-notch. He structured the backend efficiently and ensured the frontend was smooth and interactive. A fantastic developer to work with!",
+    name: "Neha Desai",
+    designation: "Lead Developer",
+    company: "CodeCrafters Technologies",
+    image: "https://randomuser.me/api/portraits/women/8.jpg",
+  },
+  {
+    testimonial:
+      "Sanket is a highly reliable and skilled developer. He delivered our project on time with exceptional quality and efficiency, and his suggestions added great value. Looking forward to working with him again!",
+    name: "Vikram Nair",
+    designation: "Founder",
+    company: "PixelWave Studios",
     image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
 

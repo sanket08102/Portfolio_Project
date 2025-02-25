@@ -102,7 +102,7 @@ const Navbar = () => {
               ))}
               <li>
                 <a
-                  href="../src/assets/resume.pdf"
+                  href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-poppins font-medium cursor-pointer text-[16px] text-secondary hover:text-white flex items-center gap-2"
