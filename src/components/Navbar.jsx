@@ -102,7 +102,7 @@ const Navbar = () => {
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-poppins font-medium cursor-pointer text-[16px] text-secondary hover:text-white flex items-center gap-2"
+                  className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex items-center gap-2"
                 >
                   Resume
                 </a>
