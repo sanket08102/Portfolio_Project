@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, memo } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
@@ -12,6 +12,7 @@ const Contact = () => {
   const [form, setForm] = useState({
     name: "",
     email: "",
+    mobile: "",
     message: "",
   });
 
@@ -40,14 +41,13 @@ const Contact = () => {
           to_name: "Sanket Teli",
           from_email: form.email,
           to_email: "telisanket8@gmail.com",
+          mobile: form.mobile,
           message: form.message,
         },
         'x-CCqmXMJwfKcKNwI'
       )
       .then(
         () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
 
           setForm({
             name: "",
@@ -81,7 +81,7 @@ const Contact = () => {
           className='mt-12 flex flex-col gap-8'
         >
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Name</span>
+            {/* <span className='text-white font-medium mb-4'>Your Name</span> */}
             <input
               type='text'
               name='name'
@@ -92,20 +92,31 @@ const Contact = () => {
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your email</span>
+            {/* <span className='text-white font-medium mb-4'>Your email</span> */}
             <input
               type='email'
               name='email'
               value={form.email}
               onChange={handleChange}
-              placeholder="What's your web address?"
+              placeholder="What's your email address?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Message</span>
+            {/* <span className='text-white font-medium mb-4'>Your Mobile No.</span> */}
+            <input
+              type='tel'
+              name='mobile'
+              value={form.mobile}
+              onChange={handleChange}
+              placeholder="What's your mobile number?"
+              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+            />
+          </label>
+          <label className='flex flex-col'>
+            {/* <span className='text-white font-medium mb-4'>Your Message</span> */}
             <textarea
-              rows={7}
+              rows={5}
               name='message'
               value={form.message}
               onChange={handleChange}
@@ -116,7 +127,7 @@ const Contact = () => {
 
           <button
             type='submit'
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-full text-white font-bold shadow-md shadow-primary'
           >
             {loading ? "Sending..." : "Send"}
           </button>
@@ -133,4 +144,4 @@ const Contact = () => {
   );
 };
 
-export default SectionWrapper(Contact, "contact");
+export default SectionWrapper(memo(Contact), "contact");

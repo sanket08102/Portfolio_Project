@@ -1,11 +1,11 @@
-import React, { Suspense, useMemo, useEffect, useState } from "react";
+import React, { Suspense, useMemo, useEffect, useState, memo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
-const Computers = ({ isMobile }) => {
+const Computers = memo(({ isMobile }) => {
   // Load the GLTF model
-  const { scene } = useGLTF("/desktop_pc/scene.gltf"); // Changed from .glb to .gltf
+  const { scene } = useGLTF("/desktop_pc/scene.glb");
 
   // Memoize the model to prevent unnecessary re-renders
   const computer = useMemo(() => scene, [scene]);
@@ -26,7 +26,7 @@ const Computers = ({ isMobile }) => {
       />
     </mesh>
   );
-};
+});
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -70,4 +70,4 @@ const ComputersCanvas = () => {
   );
 };
 
-export default ComputersCanvas;
+export default memo(ComputersCanvas);

@@ -1,3 +1,4 @@
+import React, { memo } from "react";
 import { Html, useProgress } from "@react-three/drei";
 
 const CanvasLoader = () => {
@@ -11,6 +12,7 @@ const CanvasLoader = () => {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
+        transition: "opacity 0.3s ease-in-out",
       }}
     >
       <span className='canvas-loader'></span>
@@ -28,4 +30,4 @@ const CanvasLoader = () => {
   );
 };
 
-export default CanvasLoader;
+export default memo(CanvasLoader);

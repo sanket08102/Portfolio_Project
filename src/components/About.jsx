@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Tilt from 'react-parallax-tilt';
 import { motion } from "framer-motion";
 
@@ -7,7 +7,7 @@ import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ServiceCard = ({ index, title, icon }) => (
+const ServiceCard = memo(({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
@@ -33,7 +33,7 @@ const ServiceCard = ({ index, title, icon }) => (
       </div>
     </motion.div>
   </Tilt>
-);
+));
 
 const About = () => {
   return (
@@ -59,8 +59,9 @@ const About = () => {
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
+
     </>
   );
 };
 
-export default SectionWrapper(About, "about");
+export default SectionWrapper(memo(About), "about");

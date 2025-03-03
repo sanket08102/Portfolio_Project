@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Tilt from 'react-parallax-tilt';
 import { motion } from "framer-motion";
 
@@ -8,7 +8,7 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({
+const ProjectCard = memo(({
   index,
   name,
   description,
@@ -17,14 +17,18 @@ const ProjectCard = ({
   source_code_link,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div 
+      variants={fadeIn("up", "spring", index * 0.5, 0.75)} 
+      className='w-full sm:w-[360px]'
+      style={{ willChange: 'transform, opacity' }}
+    >
       <Tilt
         options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
+          max: 25,
+          scale: 1.05,
+          speed: 300,
         }}
-        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
+        className='bg-tertiary p-5 rounded-2xl'
       >
         <div className='relative w-full h-[230px]'>
           <img
@@ -65,7 +69,7 @@ const ProjectCard = ({
       </Tilt>
     </motion.div>
   );
-};
+});
 
 const Works = () => {
   return (
@@ -97,4 +101,4 @@ const Works = () => {
   );
 };
 
-export default SectionWrapper(Works, "projects");
+export default SectionWrapper(memo(Works), "projects");
