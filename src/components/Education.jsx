@@ -14,16 +14,16 @@ const EducationCard = memo(({ index, year, degree, institution, location, cgpa }
       style={{ willChange: 'transform, opacity' }}
     >
       <div className='bg-tertiary rounded-[20px] py-5 px-5 flex flex-col justify-center'>
-        <div className='flex flex-row justify-center items-center w-full'>
+        <div className='flex lg:flex-row flex-col lg:justify-center lg:items-center justify-start items-start w-full lg:text-start text-center items-center'>
           <div className='flex flex-col'>
             <p className='text-blue-500 text-[14px]'>{year}</p>
-            <h3 className='text-white text-[19px] font-bold mt-2'>{degree}</h3>
-            <p className='text-secondary text-[16px] mb-2'>{institution}</p>
-            <p className='text-yellow-600 text-[14px]'>{location}</p>
+            <h3 className='text-white lg:text-[19px] text-[17px] font-bold mt-2'>{degree}</h3>
+            <p className='text-secondary lg:text-[16px] text-[15px] mb-2'>{institution}</p>
+            <p className='text-yellow-600 text-[14px] lg:mb-0 mb-2'>{location}</p>
           </div>
           <div className='border-l border-secondary h-full mx-4'></div>
-          <div className='flex flex-col items-center'>
-            <span className='text-secondary text-[16px]'>CGPA</span>
+          <div className='flex lg:flex-col flex-row items-center justify-center'>
+            <span className='text-secondary text-[16px]'>CGPA:&nbsp;</span>
             <span className='text-white text-[16px]'>{cgpa}</span>
           </div>
         </div>
